@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота 1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав студент АнД-31 Пархоменко Е.Д.
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Лабораторні роботи
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання №3</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Згенерувати матрицю розміром NxN. Виокремити за допомогою кольору усі непарні додатні елементи менше за 25.
+      </p>
+      <ion-item>
+        <ion-input label="N" id = "a" label-placement="floating" placeholder="3" type="number" #InputA></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="arrayras(InputA.value)">Розрахувати массив</ion-button>
+      <ion-item>
+        <ion-grid>
+          <ion-row *ngFor="let i of a">
+            <ion-col *ngFor="let j of i " [style] ="{backgroundColor: getColor(j)}">{{j}}</ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна №1</ion-title>
+  </ion-toolbar>
+</ion-footer>

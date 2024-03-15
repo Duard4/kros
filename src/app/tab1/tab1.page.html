@@ -1,0 +1,51 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота 1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав студент АнД-31 Пархоменко Е.Д.
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Лабораторні роботи
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Завдання №1</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>
+        Задано три числа. Якщо всі вони непарні, то знайти їх суму. В іншому випадку – середнє арифметичне.
+      </p>
+      <ion-item>
+        <ion-input label="Перше число" label-placement="floating" placeholder="1" type="number" #InputA></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Друге число" label-placement="floating" placeholder="1" type="number" #InputB></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Третє число" label-placement="floating" placeholder="1" type="number" #InputC></ion-input>
+      </ion-item>
+      <ion-button expand="block" (click)="ras(InputA.value, InputB.value, InputC.value)">Розрахунок</ion-button>
+      <ion-item>
+        <p>Результат обчислення {{d}}</p>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна №1</ion-title>
+  </ion-toolbar>
+</ion-footer>

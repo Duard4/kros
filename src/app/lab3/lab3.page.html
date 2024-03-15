@@ -1,0 +1,59 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота 3
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>
+      Виконав студент АнД-31 Пархоменко Е.Д.
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark" menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Лабораторні роботи
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Лабораторна робота №3</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-label>Мінімальний cередній бал</ion-label>
+      <ion-input type="number" id="a" min="60" max="100" value="80" #Inputa></ion-input>
+      <ion-text>Читання файлу з JSON файлу</ion-text>
+      <ion-button expand="block" (click)="load()">Завантажити</ion-button>
+      <ion-item>
+        <ion-list>
+          <ion-item button *ngFor="let item of data_students; index as i" detail (click)="toggleDetails(i)">
+            <ion-label *ngIf="!showDetails[i]" text-wrap>
+              <p [ngStyle]="{color: getColor(item.ave, Inputa.value)}">
+                <span>ФІО: {{item.PIB}}</span> 
+                <br>
+                <span>Cередній бал: {{item.ave}}</span>
+              </p>
+            </ion-label>
+            <ion-text *ngIf="showDetails[i]">
+              <h2>
+                <span >{{item.PIB}}</span> 
+              </h2>
+              <p>
+                <span>Група: {{item.group}}</span>
+                <br>
+                <span [ngStyle]="{color: getColor(item.ave, Inputa.value)}">Середній бал: {{item.ave}}</span>
+                <br>
+                <span>Стипендія: {{item.scholarship}} UAH</span>
+              </p>
+            </ion-text>
+          </ion-item>
+        </ion-list>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

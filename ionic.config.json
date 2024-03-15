@@ -1,0 +1,7 @@
+{
+  "name": "lab1_2_menu",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
