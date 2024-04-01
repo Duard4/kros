@@ -2,7 +2,7 @@ import {bird} from "./bird";
 
 export class crow extends bird {
     constructor(override name:string, override L:number) {
-        super();
+        super(name, L);
     }
     f(){
         return this.L*0.8;
